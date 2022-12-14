@@ -3,7 +3,7 @@
     */
 
 const changeTitle = function (newTitle) {
-  const getTitle = document.getElementsByTagName("title");
+  /*  const getTitle = document.getElementsByTagName("title"); */
   const getH1 = document.getElementsByTagName("h1");
   getTitle[0].innerText = newTitle;
   getH1[0].innerText = newTitle;
