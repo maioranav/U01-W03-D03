@@ -153,23 +153,16 @@ const generateTable = function () {
       prezzo: "8,79",
     },
   ];
+  document.getElementById("tableArea").append(table);
 
   for (let i = 0; i < oggetti.length; i++) {
-    const tRow = document.createElement("tr");
-    const tdS = [];
-    for (let p = 0; p < 4; p++) {
-      tdS[p] = document.createElement("td");
-    }
-    tdS[0].innerText = oggetti[i].immagine;
-    tdS[1].innerText = oggetti[i].nome;
-    tdS[2].innerText = oggetti[i].quantità;
-    tdS[3].innerText = oggetti[i].prezzo;
-    for (c = 0; c < tdS.length; c++) {
-      tRow.append(tdS[c]);
-    }
-    table.append(tRow);
+    addRow(
+      oggetti[i].nome,
+      oggetti[i].prezzo,
+      oggetti[i].quantità,
+      oggetti[i].immagine
+    );
   }
-  document.getElementById("tableArea").append(table);
 };
 
 /* ESERCIZIO 12
@@ -220,16 +213,21 @@ const changeColorWithRandom = function () {
     */
 
 const deleteVowels = function () {
-  document.body.innerText = document.body.innerText.replaceAll("a", "");
-  document.body.innerText = document.body.innerText.replaceAll("e", "");
-  document.body.innerText = document.body.innerText.replaceAll("i", "");
-  document.body.innerText = document.body.innerText.replaceAll("o", "");
-  document.body.innerText = document.body.innerText.replaceAll("u", "");
-  document.body.innerText = document.body.innerText.replaceAll("A", "");
-  document.body.innerText = document.body.innerText.replaceAll("E", "");
-  document.body.innerText = document.body.innerText.replaceAll("I", "");
-  document.body.innerText = document.body.innerText.replaceAll("O", "");
-  document.body.innerText = document.body.innerText.replaceAll("U", "");
+  document.querySelectorAll("h1,h2,h3,p,a,li,th,td").forEach(
+    (node) =>
+      (node.innerText = [...node.innerText]
+        .filter((char) => {
+          char = char.toLowerCase();
+          return (
+            char !== "e" &&
+            char !== "a" &&
+            char !== "i" &&
+            char !== "o" &&
+            char !== "u"
+          );
+        })
+        .join(""))
+  );
 };
 
 /*
