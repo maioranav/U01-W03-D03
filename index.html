@@ -11,7 +11,7 @@
 
 <body>
   <div>
-    <h1>Questo è il titolo della pagina</h1>
+    <h1 onclick="makeItClickable()">Questo è il titolo della pagina</h1>
     <h2>Questo è il sottotitolo della pagina</h2>
   </div>
 
@@ -40,12 +40,13 @@
 
   <div>
     <p>Anche questo testo è per gli esercizi</p>
-    <h2 id="changeMyColor" style="color: #FF00D6">Apri questa pagina con VSCode per scoprire gli esercizi</h2>
+    <h2 id="changeMyColor" style="color: #FF00D6" onclick="changeColorWithRandom()">Apri questa pagina con VSCode per
+      scoprire gli esercizi</h2>
   </div>
 
   <div id="tableArea"></div>
 
-  <footer>
+  <footer onclick="revealFooterLink()">
     <h3>DOM Manipulation is super <a
         href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents">AWESOME!</a>
     </h3>
