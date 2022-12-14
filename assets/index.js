@@ -34,8 +34,9 @@ const changePcontent = function (nuovoPdiv) {
       */
 
 const changeUrls = function () {
-  aHrefs = document.getElementsByTagName("a");
-  for (let a = 0; a < aHrefs.length - 1; a++) {
+  //   aHrefs = document.getElementsByTagName("a");
+  aHrefs = document.querySelectorAll("a:not(footer a)");
+  for (let a = 0; a < aHrefs.length; a++) {
     aHrefs[a].href = "https://www.google.com";
   }
 };
